@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stimulus 01 — Questions</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"DM Sans",sans-serif;background:#F5F4F0;color:#1A1A18;padding:32px 24px 48px;font-size:14px;line-height:1.65}
+  .card{background:#fff;border:1px solid #DDDBD5;border-radius:8px;overflow:hidden;max-width:780px;margin:0 auto}
+  .hdr{padding:18px 24px 14px;background:#FAFAF8;border-bottom:1px solid #E8E6E0;border-left:4px solid #185fa5}
+  .badge{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:12px;margin-bottom:8px;background:#185fa51A;color:#185fa5}
+  .topic{display:block;font-size:11px;color:#888;margin-bottom:4px}
+  .stim-title{font-family:"EB Garamond",serif;font-size:20px;font-weight:500;line-height:1.3;margin-bottom:4px}
+  .subtitle{font-size:12px;color:#6B6B68;font-style:italic}
+  .chart-placeholder{padding:16px 24px;border-bottom:1px solid #E8E6E0;background:#FAFAF8;text-align:center;color:#999;font-size:12px;font-style:italic}
+  .chart-placeholder img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  .qa{padding:22px 24px 28px}
+  .ql{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#185fa5;margin-bottom:18px}
+  .qblock{margin-bottom:22px}
+  .qblock:last-of-type{margin-bottom:0}
+  .qstem{font-size:13.5px;font-weight:500;color:#1A1A18;line-height:1.5;margin-bottom:10px}
+  .opt{display:flex;gap:10px;padding:4px 0;font-size:13px;color:#3A3A38;line-height:1.5}
+  .radio{flex-shrink:0;width:15px;height:15px;border:1.5px solid #C8C6C0;border-radius:50%;margin-top:3px}
+  .answer-key{margin-top:20px;padding-top:16px;border-top:1px dashed #DDDBD5;font-size:11.5px;color:#888}
+  .answer-key strong{color:#1A1A18;font-size:13px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="hdr">
+    <span class="badge">Unit 1</span>
+    <span class="topic">Topic 1.1 — Ideals of Democracy</span>
+    <h1 class="stim-title">Public Trust in the Federal Government, 1958–2024</h1>
+    <p class="subtitle">% who trust the federal government to do what is right "just about always" or "most of the time"</p>
+  </div>
+
+  <div class="chart-placeholder">
+    <img src="stimulus_01_chart.png" alt="Public Trust in the Federal Government, 1958–2024" onerror="this.style.display='none';this.nextSibling.style.display='block'">
+    <span style="display:none">[Chart: Public Trust in the Federal Government, 1958–2024]</span>
+  </div>
+
+  <div class="qa">
+    <div class="ql">Practice Questions</div>
+
+    <div class="qblock">
+      <p class="qstem">1. Which best explains the sharp increase in public trust around 2001?</p>
+      
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(A) A major economic expansion led citizens to credit the federal government with rising incomes.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(B) The September 11 attacks produced a rally-around-the-flag effect, temporarily uniting Americans behind federal institutions.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(C) A new president restored public confidence after years of political scandal.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(D) Congress passed sweeping domestic legislation that improved quality of life for most Americans.</span>
+        </div>
+    </div>
+
+    <div class="qblock">
+      <p class="qstem">2. The long-term downward trend from 1964 to 2024 most directly supports which conclusion?</p>
+      
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(A) Americans increasingly prefer direct democracy over representative institutions.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(B) Third-party candidates have eroded public confidence in the two-party system.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(C) A sustained decline in political trust reflects growing disillusionment with federal institutions following major crises such as Vietnam, Watergate, and partisan gridlock.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(D) Federal programs have consistently failed their objectives, frustrating citizens.</span>
+        </div>
+    </div>
+
+    <div class="answer-key">
+      Answer Key &nbsp;·&nbsp; Q1 → <strong>B</strong> &nbsp;&nbsp; Q2 → <strong>C</strong>
+    </div>
+  </div>
+</div>
+</body>
+</html>

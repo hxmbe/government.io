@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1000,
+    "unit": "Unit 1",
+    "topic": "1.1",
+    "type": "Stimulus",
+    "difficulty": "Medium",
+    "title": "Public Trust in the Federal Government, 1958–2024",
+    "partA": {
+      "stem": "Which best explains the sharp increase in public trust around 2001?",
+      "choices": [
+        "A major economic expansion led citizens to credit the federal government with rising incomes.",
+        "The September 11 attacks produced a rally-around-the-flag effect, temporarily uniting Americans behind federal institutions.",
+        "A new president restored public confidence after years of political scandal.",
+        "Congress passed sweeping domestic legislation that improved quality of life for most Americans."
+      ],
+      "correct": 1,
+      "explanation": "The 9/11 attacks created a rally-around-the-flag effect where Americans temporarily unified behind federal institutions and the president during national crisis."
+    },
+    "partB": {
+      "stem": "The long-term downward trend from 1964 to 2024 most directly supports which conclusion?",
+      "choices": [
+        "Americans increasingly prefer direct democracy over representative institutions.",
+        "Third-party candidates have eroded public confidence in the two-party system.",
+        "A sustained decline in political trust reflects growing disillusionment with federal institutions following major crises such as Vietnam, Watergate, and partisan gridlock.",
+        "The federal government has lost all legitimacy and must be restructured."
+      ],
+      "correct": 2,
+      "explanation": "The long-term decline reflects cumulative damage from Vietnam, Watergate, gridlock, and other institutional failures that eroded public confidence over decades."
+    }
+  },
+  {
+    "id": 1001,
+    "unit": "Unit 1",
+    "topic": "1.9",
+    "type": "Stimulus",
+    "difficulty": "Medium",
+    "title": "Federal Grants-in-Aid to State and Local Governments, 1970–2023",
+    "partA": {
+      "stem": "The sharp spike around 2009–2010 is most directly explained by which of the following?",
+      "choices": [
+        "A constitutional amendment expanded Congress's power to fund state programs.",
+        "Congress passed the American Recovery and Reinvestment Act (2009) in response to the Great Recession, dramatically increasing aid to states.",
+        "The Supreme Court ruled the federal government must provide block grants to all states.",
+        "States negotiated new cooperative federalism compacts with the federal government."
+      ],
+      "correct": 1,
+      "explanation": "The American Recovery and Reinvestment Act (ARRA) was the stimulus package passed during the 2008-2009 recession, dramatically increasing federal aid to states."
+    },
+    "partB": {
+      "stem": "The overall upward trend best illustrates which concept in American federalism?",
+      "choices": [
+        "Federal authority has steadily increased relative to state authority through grants and conditions.",
+        "States have successfully resisted federal funding and maintained independence.",
+        "Block grants have replaced categorical grants as the primary funding mechanism.",
+        "Local governments have become more powerful than the federal government."
+      ],
+      "correct": 0,
+      "explanation": "The rising trend of federal grants demonstrates the growth of federal power through fiscal federalism—the federal government uses financial incentives to shape state and local policy."
+    }
+  },
+  {
+    "id": 1002,
+    "unit": "Unit 1",
+    "topic": "1.6",
+    "type": "Stimulus",
+    "difficulty": "Hard",
+    "title": "Constitutional Amendments Ratified by Historical Era",
+    "partA": {
+      "stem": "Which best explains why the Bill of Rights era produced more amendments than any other period?",
+      "choices": [
+        "The original Constitution was too vague about presidential powers and required clarification.",
+        "Anti-Federalists demanded explicit individual rights protections as a condition of ratifying the Constitution, leading to the first ten amendments.",
+        "The Supreme Court ruled the Constitution was unconstitutional without a written list of rights.",
+        "Congress added the Bill of Rights to prevent states from seceding from the new union."
+      ],
+      "correct": 1,
+      "explanation": "The Bill of Rights were added to address Anti-Federalist concerns about individual liberty protections, a key condition for ratifying the Constitution."
+    },
+    "partB": {
+      "stem": "The cluster of amendments during the Progressive Era most directly reflects which political development?",
+      "choices": [
+        "The rise of the Democratic Party as the dominant political force.",
+        "Reform movements demanding democratic participation, labor rights, and anti-corruption measures.",
+        "The federal government's need to expand executive power to manage the economy.",
+        "Southern states' attempt to reassert regional authority after Reconstruction."
+      ],
+      "correct": 1,
+      "explanation": "The Progressive Era amendments (16th, 17th, 18th, 19th) reflected reform movements: income tax, direct Senate election, prohibition, and women's suffrage."
+    }
+  },
+  {
+    "id": 1003,
+    "unit": "Unit 2",
+    "topic": "2.4",
+    "type": "Stimulus",
+    "difficulty": "Medium",
+    "title": "Average Presidential Job Approval Rating, Selected Presidents",
+    "partA": {
+      "stem": "Which best explains why presidents during national crises tend to have higher approval ratings?",
+      "choices": [
+        "Citizens are more likely to support military action during crises.",
+        "The rally-around-the-flag effect unites the public behind the president during emergencies.",
+        "Congress automatically increases presidential power during national crises.",
+        "The media becomes more favorable to the president during dangerous times."
+      ],
+      "correct": 1,
+      "explanation": "The rally-around-the-flag effect is a documented phenomenon where public support for the president temporarily increases during national crises or emergencies."
+    },
+    "partB": {
+      "stem": "The variation in approval ratings among presidents most directly reflects:",
+      "choices": [
+        "The president's political party membership.",
+        "Economic conditions, foreign policy successes or failures, and scandals that affect public perception.",
+        "The number of executive orders issued.",
+        "The president's age and prior political experience."
+      ],
+      "correct": 1,
+      "explanation": "Presidential approval is primarily driven by external factors: economic performance, foreign policy outcomes, and handling of crises—not inherent presidential characteristics."
+    }
+  },
+  {
+    "id": 1004,
+    "unit": "Unit 2",
+    "topic": "2.3",
+    "type": "Stimulus",
+    "difficulty": "Hard",
+    "title": "Senate Cloture Motions Filed per Congress, 1971–2022",
+    "partA": {
+      "stem": "The dramatic increase in cloture motions after the 112th Congress most directly reflects:",
+      "choices": [
+        "An increase in the number of bills introduced by the majority party.",
+        "Growing partisan polarization and minority obstruction of the majority's legislative agenda.",
+        "The Senate's expansion of the filibuster rule to apply to all legislation.",
+        "A decrease in the number of senators willing to vote for cloture."
+      ],
+      "correct": 1,
+      "explanation": "Rising cloture motions reflect increased polarization: the minority party uses the filibuster more frequently to block the majority's bills, forcing cloture votes."
+    },
+    "partB": {
+      "stem": "This trend most directly illustrates which aspect of Congress's legislative process?",
+      "choices": [
+        "The House of Representatives has become more powerful than the Senate.",
+        "The filibuster and supermajority requirement (60 votes for cloture) enable minority obstruction in an increasingly polarized chamber.",
+        "The majority party has lost the ability to set the legislative agenda.",
+        "Senators now support filibustering more often because they represent smaller constituencies."
+      ],
+      "correct": 1,
+      "explanation": "The filibuster gives the minority the power to delay or block legislation unless 60 senators vote for cloture, enabling obstruction in polarized times."
+    }
+  },
+  {
+    "id": 1005,
+    "unit": "Unit 2",
+    "topic": "2.5",
+    "type": "Stimulus",
+    "difficulty": "Medium",
+    "title": "Presidential Vetoes by Administration, 1933–2024",
+    "partA": {
+      "stem": "Which best explains why FDR's veto total dramatically exceeds all others?",
+      "choices": [
+        "FDR faced opposition from a hostile Republican Congress.",
+        "FDR served longer than most presidents (three full terms) and used the veto as a check on New Deal legislation he personally opposed.",
+        "FDR had less respect for constitutional limits on presidential power.",
+        "The veto power was stronger during the 1930s-1940s than in modern times."
+      ],
+      "correct": 1,
+      "explanation": "FDR served 12+ years (four elections), longer than any president, and vetoed bills frequently as part of his legislative strategy during the New Deal era."
+    },
+    "partB": {
+      "stem": "The variation in veto usage among presidents most directly demonstrates:",
+      "choices": [
+        "Presidents from one party veto more often than presidents from the other party.",
+        "Recent presidents are weaker than historical presidents.",
+        "Presidents use the veto strategically based on congressional alignment, legislative agenda, and political context—not as a fixed constitutional tool.",
+        "The veto has become less important as an executive power over time."
+      ],
+      "correct": 2,
+      "explanation": "Veto frequency depends on context: partisan alignment, policy disagreement, length of service, and legislative agenda—not on the president's party or era."
+    }
+  },
+  {
+    "id": 1006,
+    "unit": "Unit 2",
+    "topic": "2.9",
+    "type": "Stimulus",
+    "difficulty": "Hard",
+    "title": "Supreme Court: Unanimous vs. 5–4 Decisions by Decade",
+    "partA": {
+      "stem": "Which best describes the trend in Supreme Court decision-making from the 1950s to 2020s?",
+      "choices": [
+        "Unanimous decisions have increased as the Court becomes more collegial.",
+        "The Court has become more polarized, with more 5-4 decisions and fewer unanim­ous rulings.",
+        "Unanimous decisions dominate recent decades because the Court avoids controversial cases.",
+        "The number of 5-4 decisions has decreased due to stricter ethical guidelines."
+      ],
+      "correct": 1,
+      "explanation": "The trend shows increasing ideological polarization on the Court, with more closely divided 5-4 decisions and fewer unanimous opinions, especially since the 1980s."
+    },
+    "partB": {
+      "stem": "The increase in close decisions most directly reflects:",
+      "choices": [
+        "An expansion of the Court's jurisdiction over new areas of law.",
+        "Growing ideological distance between conservative and liberal justices, making consensus more difficult.",
+        "A requirement that the Court take more cases involving partisan disputes.",
+        "The Court's desire to create more detailed legal precedents."
+      ],
+      "correct": 1,
+      "explanation": "Ideological polarization among justices has increased, particularly since the 1980s, making consensus rare on contested constitutional questions."
+    }
+  },
+  {
+    "id": 1007,
+    "unit": "Unit 2",
+    "topic": "2.12",
+    "type": "Stimulus",
+    "difficulty": "Medium",
+    "title": "Total Federal Civilian Employees, 1962–2022",
+    "partA": {
+      "stem": "The decline in federal civilian employment in the mid-1990s is most directly explained by:",
+      "choices": [
+        "The Cold War ended and defense spending decreased.",
+        "The Clinton administration implemented 'reinventing government' reforms and downsizing of the federal workforce.",
+        "Congress passed legislation eliminating entire federal agencies.",
+        "Automation replaced all federal office workers."
+      ],
+      "correct": 1,
+      "explanation": "The Clinton administration (1993-2001) implemented the National Performance Review (Reinventing Government), which reduced federal workforce through attrition and restructuring."
+    },
+    "partB": {
+      "stem": "The overall size of the federal workforce since the 1960s most directly illustrates:",
+      "choices": [
+        "The federal government has grown dramatically in power over time.",
+        "The federal government's size fluctuates based on policy priorities, economic conditions, and political choices—not on a steady growth trajectory.",
+        "Federal employment has continuously expanded since the Great Society.",
+        "The bureaucracy is increasingly inefficient and overstaffed."
+      ],
+      "correct": 1,
+      "explanation": "Federal employment reflects policy decisions (New Deal expansion, post-Cold War reduction, War on Terror expansion) and fiscal priorities, not automatic growth."
+    }
+  },
+  {
+    "id": 1008,
+    "unit": "Unit 3",
+    "topic": "3.6",
+    "type": "Stimulus",
+    "difficulty": "Hard",
+    "title": "U.S. Incarceration Rate per 100,000 Residents, 1970–2022",
+    "partA": {
+      "stem": "Which best explains the dramatic rise in the incarceration rate from 1980 to 2010?",
+      "choices": [
+        "Crime rates increased dramatically during this period.",
+        "War on Drugs policies, mandatory minimums, and tough-on-crime sentencing reforms dramatically increased incarceration rates despite stable or declining crime.",
+        "Prison construction became cheaper and more feasible.",
+        "More Americans committed violent crimes due to economic hardship."
+      ],
+      "correct": 1,
+      "explanation": "The War on Drugs (1970s-1980s), mandatory minimum sentences, and tough-on-crime policies increased incarceration rates even as crime rates stabilized or fell."
+    },
+    "partB": {
+      "stem": "The decline in incarceration rates since 2010 most directly reflects:",
+      "choices": [
+        "Crime rates have increased significantly.",
+        "Criminal justice reform movements, bipartisan sentencing reform, and reconsideration of mass incarceration policies.",
+        "Fewer people are committing crimes in the United States.",
+        "The Justice Department has decided to prosecute fewer cases."
+      ],
+      "correct": 1,
+      "explanation": "Criminal justice reform—including the Fair Sentencing Act, state sentencing reform, and bipartisan recognition of mass incarceration problems—has driven recent declines."
+    }
+  }
+]

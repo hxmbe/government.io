@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stimulus 12 — Questions</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"DM Sans",sans-serif;background:#F5F4F0;color:#1A1A18;padding:32px 24px 48px;font-size:14px;line-height:1.65}
+  .card{background:#fff;border:1px solid #DDDBD5;border-radius:8px;overflow:hidden;max-width:780px;margin:0 auto}
+  .hdr{padding:18px 24px 14px;background:#FAFAF8;border-bottom:1px solid #E8E6E0;border-left:4px solid #0F6E56}
+  .badge{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:12px;margin-bottom:8px;background:#0F6E561A;color:#0F6E56}
+  .topic{display:block;font-size:11px;color:#888;margin-bottom:4px}
+  .stim-title{font-family:"EB Garamond",serif;font-size:20px;font-weight:500;line-height:1.3;margin-bottom:4px}
+  .subtitle{font-size:12px;color:#6B6B68;font-style:italic}
+  .chart-placeholder{padding:16px 24px;border-bottom:1px solid #E8E6E0;background:#FAFAF8;text-align:center;color:#999;font-size:12px;font-style:italic}
+  .chart-placeholder img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  .qa{padding:22px 24px 28px}
+  .ql{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#0F6E56;margin-bottom:18px}
+  .qblock{margin-bottom:22px}
+  .qblock:last-of-type{margin-bottom:0}
+  .qstem{font-size:13.5px;font-weight:500;color:#1A1A18;line-height:1.5;margin-bottom:10px}
+  .opt{display:flex;gap:10px;padding:4px 0;font-size:13px;color:#3A3A38;line-height:1.5}
+  .radio{flex-shrink:0;width:15px;height:15px;border:1.5px solid #C8C6C0;border-radius:50%;margin-top:3px}
+  .answer-key{margin-top:20px;padding-top:16px;border-top:1px dashed #DDDBD5;font-size:11.5px;color:#888}
+  .answer-key strong{color:#1A1A18;font-size:13px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="hdr">
+    <span class="badge">Unit 4</span>
+    <span class="topic">Topic 4.1 — American Attitudes About Government</span>
+    <h1 class="stim-title">Party Identification Trends Among U.S. Adults, 1994–2024</h1>
+    <p class="subtitle">% of U.S. adults identifying as Democrat, Republican, or Independent (including leaners)</p>
+  </div>
+
+  <div class="chart-placeholder">
+    <img src="stimulus_12_chart.png" alt="Party Identification Trends Among U.S. Adults, 1994–2024" onerror="this.style.display='none';this.nextSibling.style.display='block'">
+    <span style="display:none">[Chart: Party Identification Trends Among U.S. Adults, 1994–2024]</span>
+  </div>
+
+  <div class="qa">
+    <div class="ql">Practice Questions</div>
+
+    <div class="qblock">
+      <p class="qstem">1. Which best describes the trend in party identification from 1994 to 2024?</p>
+      
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(A) Democratic identification has grown steadily while Republican identification has declined.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(B) Independent identification has grown significantly while both major parties have lost adherents, suggesting increasing disaffection with the two-party system.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(C) Republican identification has surged since 2016, making it the dominant party affiliation in the U.S.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(D) Party identification has remained essentially stable across all three categories.</span>
+        </div>
+    </div>
+
+    <div class="qblock">
+      <p class="qstem">2. The rise in Independent identification most directly relates to which challenge facing political parties?</p>
+      
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(A) Declining voter registration requirements have made it easier to avoid identifying with a party.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(B) Third-party candidates have recruited large numbers of voters away from both major parties.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(C) Increased partisan polarization may drive moderate voters to reject major party labels even when their actual voting still aligns with one party.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(D) The Electoral College systematically disadvantages both major parties, encouraging independent identification.</span>
+        </div>
+    </div>
+
+    <div class="answer-key">
+      Answer Key &nbsp;·&nbsp; Q1 → <strong>B</strong> &nbsp;&nbsp; Q2 → <strong>C</strong>
+    </div>
+  </div>
+</div>
+</body>
+</html>

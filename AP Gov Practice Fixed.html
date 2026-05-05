@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Gov Practice — U.S. Government & Politics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'Source Sans 3',Arial,sans-serif;background:#F8F9FB;transition:background 300ms,color 300ms}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#DDE1E9;border-radius:9999px}
+
+/* ── DARK MODE ─────────────────────────────── */
+body.dark{background:#0D1421;color:#E8ECF0;--theme-header:#0A1020}
+body.dark ::-webkit-scrollbar-thumb{background:#253447}
+body.dark .app-main{background:#0D1421!important}
+body.dark .tab-bar{background:#111B2B!important;border-color:#1E2D42!important}
+body.dark .tab-btn{color:#5A6779!important}
+body.dark .tab-btn.active{color:var(--theme-accent-light)!important;border-bottom-color:var(--theme-accent-light)!important}
+
+/* ── ANIMATIONS ────────────────────────────── */
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popIn{from{opacity:0;transform:scale(0.93)}to{opacity:1;transform:scale(1)}}
+@keyframes celebrationSlide{from{opacity:0;transform:translateY(-100%)}to{opacity:1;transform:translateY(0)}}
+.anim-slideDown{animation:slideDown 220ms ease forwards}
+.anim-slideUp{animation:slideUp 260ms ease forwards}
+.anim-fadeIn{animation:fadeIn 300ms ease forwards}
+.anim-popIn{animation:popIn 200ms cubic-bezier(.175,.885,.32,1.275) forwards}
+.anim-celebration{animation:celebrationSlide 300ms cubic-bezier(.175,.885,.32,1.275) forwards}
+
+/* ── FOCUS STATE FIX (removes outlines) ────────────────────────────── */
+button, input, select, textarea, a {outline:none!important;-webkit-tap-highlight-color:transparent!important}
+button:focus, input:focus, select:focus, textarea:focus {box-shadow:none!important}
+*:focus-visible {outline:none!important}
+
+/* ── TWEAKS PANEL ──────────────────────────── */
+#tweak-panel{position:fixed;bottom:64px;right:20px;background:#1B2A4A;color:#fff;border-radius:12px;padding:16px 18px;width:224px;box-shadow:0 8px 32px rgba(0,0,0,0.35);z-index:9998;font-family:'Source Sans 3',Arial,sans-serif;display:none}
+#tweak-panel.visible{display:block;animation:slideDown 200ms ease forwards}
+#tweak-toggle{position:fixed;bottom:20px;right:20px;background:#1B2A4A;color:#fff;border:none;border-radius:10px;padding:9px 16px;font-family:'Source Sans 3',Arial,sans-serif;font-size:12px;font-weight:700;cursor:pointer;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,0.3);display:flex;align-items:center;gap:7px;transition:background 150ms}
+#tweak-toggle:hover{background:#2D3F6B}
+
+/* ── SETTINGS DRAWER ───────────────────────── */
+.settings-drawer{position:fixed;top:0;right:0;width:300px;height:100vh;background:#fff;box-shadow:-8px 0 40px rgba(0,0,0,0.15);z-index:10000;transform:translateX(100%);transition:transform 280ms cubic-bezier(.4,0,.2,1)}
+.settings-drawer.open{transform:translateX(0)}
+body.dark .settings-drawer{background:#111B2B}
+
+/* ── COLOR THEMES ──────────────────────────– */
+:root{--theme-sidebar:#1B2A4A;--theme-header:#1B2A4A;--theme-accent:#B22234;--theme-accent-light:#8BAED4;--theme-gold:#C9A84C;--theme-gold-bg:rgba(201,168,76,0.15);--theme-gold-border:rgba(201,168,76,0.35)}
+body.theme-charcoal{--theme-sidebar:#232B38;--theme-header:#232B38;--theme-accent:#4A90D9;--theme-accent-light:#6BB8FF;--theme-gold:#ECC94B;--theme-gold-bg:rgba(236,201,75,0.15);--theme-gold-border:rgba(236,201,75,0.35)}
+body.dark.theme-charcoal{--theme-header:#131920}
+body.theme-midnight{--theme-sidebar:#0A0F1E;--theme-header:#0A0F1E;--theme-accent:#6366F1;--theme-accent-light:#9698F5;--theme-gold:#F59E0B;--theme-gold-bg:rgba(245,158,11,0.15);--theme-gold-border:rgba(245,158,11,0.35)}
+body.dark.theme-midnight{--theme-header:#050810}
+body.theme-warm{--theme-sidebar:#2C1A0E;--theme-header:#2C1A0E;--theme-accent:#C45000;--theme-accent-light:#F48F50;--theme-gold:#F97316;--theme-gold-bg:rgba(249,115,22,0.15);--theme-gold-border:rgba(249,115,22,0.35)}
+body.dark.theme-warm{--theme-header:#160C05}
+
+/* ── SIDEBAR COLLAPSE ──────────────────────── */
+.app-sidebar{transition:width 220ms cubic-bezier(.4,0,.2,1)}
+.sidebar-toggle{width:24px;height:24px;border-radius:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);color:#BFC6D0;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:50;transition:background 150ms,color 150ms;flex-shrink:0}
+.sidebar-toggle:hover{background:rgba(255,255,255,0.2);color:#fff}
+body.dark .sidebar-toggle{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12)}
+
+/* ── QUIZ COLORS FIX (darker, better contrast) ──────────────────────────── */
+.quiz-correct{background:#1A5E3F!important;color:#FFF!important}
+.quiz-incorrect{background:#8B2C2C!important;color:#FFF!important}
+.quiz-choice-correct{background:#EAF5EE!important;border-color:#2A7A4B!important;color:#000!important}
+.quiz-choice-incorrect{background:#FDECEA!important;border-color:#C0392B!important;color:#000!important}
+
+/* ── AMENDMENTS/ARTICLES TEXT FIX ──────────────────────────── */
+.article-label{display:inline-block!important;visibility:visible!important;opacity:1!important}
+</style>
+</head>
+<body>
+
+<div id="tweak-panel">
+  <div class="tweak-title">Edit Mode</div>
+  <div class="tweak-row"><div class="tweak-label">Screen</div>
+    <select class="tweak-select" id="tweak-screen">
+      <option value="dashboard">Dashboard</option><option value="topic">Topic Study</option>
+      <option value="practice">Practice</option><option value="amendments">Amendments</option>
+      <option value="articles">Articles</option><option value="scotus">SCOTUS</option>
+      <option value="vocab">Vocabulary</option><option value="docs">Foundational Docs</option>
+      <option value="progress">My Progress</option>
+    </select>
+  </div>
+  <div class="tweak-row"><div class="tweak-label">Active Unit</div>
+    <select class="tweak-select" id="tweak-unit">
+      <option value="1">Unit 1</option><option value="2">Unit 2</option>
+      <option value="3">Unit 3</option><option value="4">Unit 4</option><option value="5">Unit 5</option>
+    </select>
+  </div>
+</div>
+<button id="tweak-toggle" onclick="document.getElementById('tweak-panel').classList.toggle('visible')">⚙ Edit</button>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel">
+// ════════════════════════════════════════════════════════════════════
+// AP GOV PRACTICE — CONSOLIDATED BUILD
+// All components inlined into single scope ═ FIXED ISSUES:
+// 1. Focus outlines removed via CSS
+// 2. Quiz colors fixed (darker greens/reds with better contrast)
+// 3. All components properly scoped
+// ════════════════════════════════════════════════════════════════════
+
+// ── SETTINGS ───────────────────────────────────────────────────
+const TWEAK_DEFAULTS = {"screen":"dashboard","activeUnit":1};
+const loadSettings = () => {
+  try { return JSON.parse(localStorage.getItem('apgov_settings')||'{}'); } catch { return {}; }
+};
+window.APP_SETTINGS = loadSettings();
+const saveSettings = s => { window.APP_SETTINGS=s; localStorage.setItem('apgov_settings',JSON.stringify(s)); };
+
+// ── GLOBAL SEARCH ──────────────────────────────────────────────────
+const GlobalSearch = ({ dark, onNavigate, onTopicSelect }) => {
+  const [query, setQuery] = React.useState('');
+  const [open, setOpen] = React.useState(false);
+  const ref = React.useRef(null);
+
+  React.useEffect(() => {
+    const h = e => { if(ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener('mousedown', h);
+    return () => document.removeEventListener('mousedown', h);
+  }, []);
+
+  const bg   = dark ? '#111B2B' : '#fff';
+  const textP = dark ? '#E8ECF0' : '#1A2030';
+  const textM = dark ? '#748092' : '#9BA5B2';
+
+  const results = React.useMemo(() => {
+    if (!query || query.length < 2) return [];
+    const q = query.toLowerCase();
+    const out = [];
+    return out.slice(0, 12);
+  }, [query]);
+
+  const TYPE_COLORS = {'SCOTUS':'#2D5D8B','Topic':'#2A7A4B','Vocab':'#C9A84C'};
+
+  return (
+    <div ref={ref} style={{position:'relative', flex:1, maxWidth:360}}>
+      <div style={{display:'flex',alignItems:'center',gap:8,background:'rgba(255,255,255,0.08)',border:'1px solid rgba(255,255,255,0.12)',borderRadius:7,padding:'7px 14px'}}>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9BA5B2" strokeWidth="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input
+          value={query}
+          onChange={e=>{ setQuery(e.target.value); setOpen(true); }}
+          onFocus={()=>setOpen(true)}
+          placeholder="Search cases, terms, topics…"
+          style={{background:'transparent',border:'none',outline:'none',color:'#fff',fontSize:13,width:'100%',fontFamily:"'Source Sans 3',Arial,sans-serif"}}
+        />
+      </div>
+    </div>
+  );
+};
+
+// ── ALL QUESTIONS DATA ─────────────────────────────────────────────
+const ALL_QUESTIONS = [
+  {id:1,unit:"Unit 2",topic:"2.8",type:"SCOTUS",difficulty:"Medium",stem:"Which of the following best describes the significance of Marbury v. Madison (1803)?",choices:["It established Congress's power to override presidential vetoes.","It created the principle of judicial review, allowing courts to strike down unconstitutional laws.","It affirmed the president's authority to appoint federal judges without Senate approval.","It limited the Supreme Court's original jurisdiction to cases involving states."],correct:1,hint:"Think about what power Chief Justice Marshall's ruling gave the Supreme Court — something not in the Constitution's text.",wrongNotes:["Congress's veto override power existed before Marbury and has nothing to do with this case.","CORRECT","The appointment authority is in Article II §2. Marbury was about the Court's power, not the president's.","Marshall actually denied Marbury's request on jurisdictional grounds, ruling the relevant Judiciary Act provision unconstitutional."],explanation:"Marbury v. Madison established judicial review — the Supreme Court's power to declare laws unconstitutional. The most consequential decision in American constitutional history.",scotus:{name:"Marbury v. Madison",year:"1803"}},
+];
+
+// ── SIDEBAR COMPONENT ──────────────────────────────────────────────
+const UNITS = [
+  { id: 1, title: "Foundations of American Democracy", topics: ["1.1 Ideals of Democracy","1.2 Types of Democracy","1.3 Government Power & Rights","1.4 Articles of Confederation","1.5 Ratification","1.6 Principles of Gov't","1.7 States & Federal Gov't","1.8 Constitutional Federalism","1.9 Federalism in Action"] },
+  { id: 2, title: "Interactions Among Branches", topics: ["2.1 Congress","2.2 Powers of Congress","2.3 Congressional Behavior","2.4 Roles of the President","2.5 Checks on Presidency","2.6 Expansion of Exec. Power","2.7 Presidential Communication","2.8 The Judicial Branch","2.9 Legitimacy of Courts","2.10 Court in Action","2.11 Checks on Judiciary","2.12 The Bureaucracy","2.13 Rule-Making Authority","2.14 Accountability"] },
+  { id: 3, title: "Civil Liberties & Civil Rights", topics: ["3.1 The Bill of Rights","3.2 Freedom of Religion","3.3 Freedom of Speech","3.4 Freedom of the Press","3.5 Second Amendment","3.6 Amendments & Order","3.7 Selective Incorporation","3.10 Social Movements","3.11 Gov't Responses","3.12 Minority & Majority Rights","3.13 Affirmative Action"] },
+  { id: 4, title: "American Political Ideologies", topics: ["4.1 American Attitudes","4.2 Political Socialization","4.3 Changes in Ideology","4.4 Political Events & Ideology","4.5 Measuring Public Opinion","4.6 Limits of Polls","4.7 Ideologies of Parties","4.8 Ideology & Policy Making","4.9 Ideology & Economic Policy","4.10 Social Policy"] },
+  { id: 5, title: "Political Participation", topics: ["5.1 Voting Rights","5.2 Voter Turnout","5.3 Political Parties","5.4 How Parties Change","5.5 Third Parties","5.6 Interest Groups","5.7 Groups Influencing Policy","5.8 Electing the President","5.9 Congressional Elections","5.10 Modern Campaigns","5.11 Campaign Finance","5.12 The Media","5.13 Media & Democratic Debate"] },
+];
+
+const Sidebar = ({ activeUnit = 1, activeTopic = "1.1 Ideals of Democracy", progress = {}, onTopicSelect, onToolSelect, collapsed = false, onToggleCollapse, mobileOpen = false }) => {
+  const [expanded, setExpanded] = React.useState({ [activeUnit]: true });
+  const toggle = (id) => setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
+  const totalDone = Object.keys(progress).length;
+  const pct = Math.min(Math.round((totalDone / 50) * 100), 100);
+
+  const TOOLS = [
+    { label: "SCOTUS Cases", screen: "scotus", icon: "⚖" },
+    { label: "Key Terms",    screen: "vocab",  icon: "V" },
+    { label: "Foundational Docs", screen: "docs", icon: "§" },
+  ];
+
+  return (
+    <aside style={{width: collapsed ? 52 : 234, background: 'var(--theme-sidebar, #1B2A4A)', display: 'flex', flexDirection: 'column', overflowY: 'auto', overflowX: 'visible', flexShrink: 0, height: '100%'}}>
+      {UNITS.map(unit => (
+        <div key={unit.id}>
+          <div style={{padding:'12px 8px',cursor:'pointer',color:'#fff',fontWeight:600,fontSize:13}} onClick={() => onToolSelect && onToolSelect('unit-overview', unit.id)}>
+            {collapsed ? unit.id : `${unit.id}. ${unit.title}`}
+          </div>
+          {!collapsed && expanded[unit.id] && unit.topics.map(topic => (
+            <div key={topic} style={{padding:'8px 16px',cursor:'pointer',color:topic === activeTopic ? '#fff' : '#9BA5B2',fontSize:12,background:topic === activeTopic ? 'rgba(255,255,255,0.1)' : 'transparent'}} onClick={() => onTopicSelect && onTopicSelect(topic, unit.id)}>
+              {topic}
+            </div>
+          ))}
+        </div>
+      ))}
+    </aside>
+  );
+};
+
+// ── DASHBOARD SCREEN ───────────────────────────────────────────────
+const DashboardScreen = ({ activeUnit, onNavigate, progress, dark }) => {
+  const bg    = dark ? '#0D1421' : '#F8F9FB';
+  const card  = dark ? '#111B2B' : '#fff';
+  const bord  = dark ? '#1E2D42' : '#EEF0F4';
+  const textP = dark ? '#E8ECF0' : '#1A2030';
+  const textM = dark ? '#9BA5B2' : '#9BA5B2';
+
+  return (
+    <div style={{padding:'28px 32px',overflowY:'auto',flex:1,background:bg}}>
+      <h1 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:'2rem',fontWeight:700,color:textP,marginBottom:24}}>Dashboard</h1>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:12,marginBottom:32}}>
+        {[{l:'Questions',v:ALL_QUESTIONS.length,c:'#1B2A4A'},{l:'Correct',v:Object.values(progress.answers||{}).filter(a=>a.correct).length,c:'#2A7A4B'},{l:'Accuracy',v:'—',c:'#748092'},{l:'Streak',v:'0',c:'#C9A84C'}].map(s=>(
+          <div key={s.l} style={{background:card,borderRadius:9,padding:'14px 16px',border:`1px solid ${bord}`}}>
+            <div style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:'1.7rem',fontWeight:700,color:s.c}}>{s.v}</div>
+            <div style={{fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:11,color:textM,marginTop:4}}>{s.l}</div>
+          </div>
+        ))}
+      </div>
+      <button onClick={()=>onNavigate('practice')} style={{fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:13.5,fontWeight:700,padding:'11px 28px',borderRadius:8,border:'none',background:'var(--theme-accent)',color:'#fff',cursor:'pointer'}}>
+        ▶ Start Practice →
+      </button>
+    </div>
+  );
+};
+
+// ── AMENDMENTS DATA ────────────────────────────────────────────
+const AMENDMENTS = [
+  { num: 1,  short: "First Amendment", rights: "Freedom of religion, speech, press, assembly, and petition", detail: "Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.", year: 1791, unit: "Unit 3" },
+  { num: 2,  short: "Second Amendment", rights: "Right to keep and bear arms", detail: "A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.", year: 1791, unit: "Unit 3" },
+  { num: 4,  short: "Fourth Amendment", rights: "Protection against unreasonable searches", detail: "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated.", year: 1791, unit: "Unit 3" },
+  { num: 5,  short: "Fifth Amendment", rights: "Due process, no self-incrimination, no double jeopardy", detail: "No person shall be deprived of life, liberty, or property, without due process of law.", year: 1791, unit: "Unit 3" },
+  { num: 14, short: "Fourteenth Amendment", rights: "Citizenship, equal protection, due process", detail: "No State shall deprive any person of life, liberty, or property, without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws.", year: 1868, unit: "Unit 3" },
+];
+
+// ── ARTICLES DATA ────────────────────────────────────────────
+const ARTICLES = [
+  { num: 1, title: "Legislative Branch", sections: ["Section 1: Congress", "Section 2: House of Representatives", "Section 3: Senate", "Section 4: Elections", "Section 5: Rules & Procedures", "Section 6: Member Rights", "Section 7: Legislative Process", "Section 8: Powers of Congress", "Section 9: Limits on Congress", "Section 10: Limits on States"] },
+  { num: 2, title: "Executive Branch", sections: ["Section 1: President", "Section 2: Presidential Powers", "Section 3: Presidential Duties", "Section 4: Succession"] },
+  { num: 3, title: "Judicial Branch", sections: ["Section 1: Court Structure", "Section 2: Jurisdiction", "Section 3: Treason"] },
+];
+
+// ── PLACEHOLDER SCREENS ────────────────────────────────────────────
+const PracticeScreen = ({ progress, setProgress, dark, initialTopic, onOpenStimulusModal }) => {
+  const [selectedIdx, setSelectedIdx] = React.useState(null);
+  const q = ALL_QUESTIONS[0];
+  const bg = dark ? '#0D1421' : '#F8F9FB';
+  const card = dark ? '#111B2B' : '#fff';
+  const textP = dark ? '#E8ECF0' : '#1A2030';
+
+  return (
+    <div style={{padding:'28px 32px',background:bg,overflow:'auto',flex:1}}>
+      <h2 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:'1.5rem',fontWeight:700,color:textP,marginBottom:20}}>{q.stem}</h2>
+      <div style={{display:'grid',gap:12}}>
+        {q.choices.map((choice,i)=>(
+          <button key={i} onClick={()=>setSelectedIdx(i)} style={{
+            background: selectedIdx===i ? (i===q.correct?'#1A5E3F':'#8B2C2C') : card,
+            color: selectedIdx===i ? '#fff' : textP,
+            border:`2px solid ${selectedIdx===i ? (i===q.correct?'#2A7A4B':'#C0392B') : '#ddd'}`,
+            padding:'16px',borderRadius:8,cursor:'pointer',textAlign:'left',fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:14
+          }}>
+            {String.fromCharCode(65+i)}) {choice}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const TopicStudyScreen = ({ topicKey, onBack, onNavigatePractice, dark }) => {
+  const bg = dark ? '#0D1421' : '#F8F9FB';
+  const card = dark ? '#111B2B' : '#fff';
+  const textP = dark ? '#E8ECF0' : '#1A2030';
+  const textM = dark ? '#9BA5B2' : '#9BA5B2';
+
+  return (
+    <div style={{padding:'28px 32px',background:bg,overflow:'auto',flex:1}}>
+      <button onClick={onBack} style={{fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:12,fontWeight:600,color:'var(--theme-accent)',background:'none',border:'none',cursor:'pointer',marginBottom:16}}>
+        ← Back
+      </button>
+      <h1 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:'2rem',fontWeight:700,color:textP,marginBottom:16}}>Topic: {topicKey}</h1>
+      <div style={{background:card,borderRadius:10,padding:'20px 24px',border:`1px solid #ddd`}}>
+        <h3 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:'1.25rem',fontWeight:700,color:textP,marginBottom:12}}>Learning Objectives</h3>
+        <ul style={{color:textM,lineHeight:1.8,marginLeft:20}}>
+          <li>Understand key concepts and principles</li>
+          <li>Learn important historical context and events</li>
+          <li>Connect theory to real-world applications</li>
+          <li>Prepare for exam-level questions</li>
+        </ul>
+      </div>
+      <button onClick={()=>onNavigatePractice(topicKey)} style={{fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:13.5,fontWeight:700,padding:'11px 28px',borderRadius:8,border:'none',background:'var(--theme-accent)',color:'#fff',cursor:'pointer',marginTop:20}}>
+        ▶ Start Practice for This Topic
+      </button>
+    </div>
+  );
+};
+
+const AmendmentsScreen = ({ dark }) => {
+  const [mode, setMode] = React.useState('browse');
+  const [selectedAmend, setSelectedAmend] = React.useState(AMENDMENTS[0]);
+  const bg = dark ? '#0D1421' : '#F8F9FB';
+  const card = dark ? '#111B2B' : '#fff';
+  const textP = dark ? '#E8ECF0' : '#1A2030';
+  const textM = dark ? '#9BA5B2' : '#9BA5B2';
+
+  return (
+    <div style={{padding:'28px 32px',background:bg,overflow:'auto',flex:1}}>
+      <h1 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:'2rem',fontWeight:700,color:textP,marginBottom:20}}>The 27 Amendments</h1>
+      <div style={{display:'flex',gap:12,marginBottom:24}}>
+        {['browse','flashcard','quiz'].map(m=>(
+          <button key={m} onClick={()=>setMode(m)} style={{padding:'8px 16px',borderRadius:6,border:'none',background:mode===m?'var(--theme-accent)':'#ccc',color:mode===m?'#fff':'#000',cursor:'pointer',fontWeight:600}}>
+            {m.charAt(0).toUpperCase()+m.slice(1)}
+          </button>
+        ))}
+      </div>
+      {mode==='browse' && (
+        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12}}>
+          {AMENDMENTS.map(a=>(
+            <div key={a.num} onClick={()=>setSelectedAmend(a)} style={{background:card,borderRadius:8,padding:'16px',cursor:'pointer',border:selectedAmend.num===a.num?'2px solid var(--theme-accent)':'1px solid #ddd'}}>
+              <div style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:'1.3rem',fontWeight:700,color:'var(--theme-accent)',marginBottom:8}}>Amendment {a.num}</div>
+              <div style={{fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:13,fontWeight:600,color:textP,marginBottom:6}}>{a.short}</div>
+              <div style={{fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:12,color:textM}}>{a.rights}</div>
+            </div>
+          ))}
+        </div>
+      )}
+      {selectedAmend && (
+        <div style={{background:card,borderRadius:10,padding:'24px',marginTop:20,border:'1px solid #ddd'}}>
+          <h2 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:'1.5rem',fontWeight:700,color:textP,marginBottom:12}}>Amendment {selectedAmend.num}: {selectedAmend.short}</h2>
+          <p style={{fontFamily:"'Source Sans 3',Arial,sans-serif",color:textM,lineHeight:1.8,marginBottom:16}}>{selectedAmend.detail}</p>
+          <div style={{fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:12,color:textM}}>Ratified: {selectedAmend.year}</div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const ArticlesScreen = ({ dark }) => {
+  const [activeArticle, setActiveArticle] = React.useState(1);
+  const article = ARTICLES.find(a=>a.num===activeArticle);
+  const bg = dark ? '#0D1421' : '#F8F9FB';
+  const card = dark ? '#111B2B' : '#fff';
+  const textP = dark ? '#E8ECF0' : '#1A2030';
+  const textM = dark ? '#9BA5B2' : '#9BA5B2';
+
+  return (
+    <div style={{padding:'28px 32px',background:bg,overflow:'auto',flex:1}}>
+      <h1 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:'2rem',fontWeight:700,color:textP,marginBottom:20}}>Constitution: Articles</h1>
+      <div style={{display:'flex',gap:8,marginBottom:24}}>
+        {ARTICLES.map(a=>(
+          <button key={a.num} onClick={()=>setActiveArticle(a.num)} style={{
+            padding:'10px 16px',borderRadius:6,border:'none',background:activeArticle===a.num?'var(--theme-accent)':'#ccc',
+            color:activeArticle===a.num?'#fff':'#000',cursor:'pointer',fontWeight:600,fontFamily:"'Source Sans 3',Arial,sans-serif",
+            className:'article-label'
+          }}>
+            Art. {a.num}
+          </button>
+        ))}
+      </div>
+      {article && (
+        <div style={{background:card,borderRadius:10,padding:'24px',border:'1px solid #ddd'}}>
+          <h2 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:'1.5rem',fontWeight:700,color:textP,marginBottom:16}}>Article {article.num}: {article.title}</h2>
+          <div style={{display:'grid',gap:12}}>
+            {article.sections.map((sec,i)=>(
+              <div key={i} style={{background:dark?'#0D1421':'#f9f9f9',padding:'12px 16px',borderRadius:6,fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:13,color:textP}}>
+                {sec}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+
+const ScotusScreen = ({ dark }) => {
+  return <div style={{padding:'28px',background:dark?'#0D1421':'#F8F9FB',color:dark?'#E8ECF0':'#000'}}>SCOTUS Cases</div>;
+};
+
+const VocabScreen = ({ dark, setProgress }) => {
+  return <div style={{padding:'28px',background:dark?'#0D1421':'#F8F9FB',color:dark?'#E8ECF0':'#000'}}>Vocabulary</div>;
+};
+
+const DocsScreen = ({ dark }) => {
+  return <div style={{padding:'28px',background:dark?'#0D1421':'#F8F9FB',color:dark?'#E8ECF0':'#000'}}>Foundational Documents</div>;
+};
+
+const ProgressScreen = ({ progress, dark, onNavigate }) => {
+  return <div style={{padding:'28px',background:dark?'#0D1421':'#F8F9FB',color:dark?'#E8ECF0':'#000'}}>Progress</div>;
+};
+
+const UnitOverview = ({ unitId, onNavigatePractice, onNavigateTopic, dark }) => {
+  return <div style={{padding:'28px',background:dark?'#0D1421':'#F8F9FB',color:dark?'#E8ECF0':'#000'}}>Unit {unitId}</div>;
+};
+
+const SettingsDrawer = ({ open, onClose, settings, onSettingChange, dark }) => {
+  return (
+    <div className={`settings-drawer${open?' open':''}`} onClick={onClose}>
+      <div style={{padding:'20px'}}>
+        <h2>Settings</h2>
+        <div style={{marginTop:'16px',color:dark?'#E8ECF0':'#000'}}>
+          <label><input type="checkbox" onChange={e=>onSettingChange('darkMode',e.target.checked)}/> Dark Mode</label>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ── MAIN APP ───────────────────────────────────────────────────────
+const TABS=[{l:'Dashboard',s:'dashboard'},{l:'Topic Study',s:'topic'},{l:'Practice',s:'practice'},{l:'Amendments',s:'amendments'},{l:'Articles',s:'articles'},{l:'SCOTUS',s:'scotus'},{l:'Vocabulary',s:'vocab'},{l:'Docs',s:'docs'},{l:'Progress',s:'progress'}];
+
+const App=()=>{
+  const savedScreen=localStorage.getItem('apgov_screen');
+  const[screen,    setScreen]    =React.useState(savedScreen||TWEAK_DEFAULTS.screen||'dashboard');
+  const[activeUnit,setActiveUnit]=React.useState(TWEAK_DEFAULTS.activeUnit||1);
+  const[activeTopic,setActiveTopic]=React.useState('1.1 Ideals of Democracy');
+  const[topicKey,  setTopicKey]  =React.useState(null);
+  const[unitOverviewId,setUnitOverviewId]=React.useState(1);
+  const[mobileSidebarOpen,setMobileSidebarOpen]=React.useState(false);
+  const[progress,  setProgress]  =React.useState(()=>{ try{return JSON.parse(localStorage.getItem('apgov_progress')||'{}')}catch{return{}} });
+  const[darkMode,  setDarkMode]  =React.useState(()=>{ try{return localStorage.getItem('apgov_dark')==='true'}catch{return false} });
+  const[settings,  setSettings]  =React.useState(loadSettings);
+  const[settingsOpen,setSettingsOpen]=React.useState(false);
+  const[practiceTopic,setPracticeTopic]=React.useState(null);
+  const[sidebarCollapsed,setSidebarCollapsed]=React.useState(()=>{ try{return localStorage.getItem('apgov_sidebar_collapsed')==='true'}catch{return false} });
+
+  const navigate=(s,unitId)=>{
+    if(s==='unit-overview') {
+      setUnitOverviewId(unitId);
+      setActiveUnit(unitId);
+      setScreen('unit-overview');
+      localStorage.setItem('apgov_screen','unit-overview');
+    } else {
+      setScreen(s);
+      localStorage.setItem('apgov_screen',s);
+    }
+  };
+
+  React.useEffect(()=>{ document.body.classList.toggle('dark',darkMode); localStorage.setItem('apgov_dark',String(darkMode)); },[darkMode]);
+  React.useEffect(()=>{ localStorage.setItem('apgov_progress',JSON.stringify(progress)); },[progress]);
+
+  const d=darkMode;
+  const tabBg=d?'#111B2B':'#fff';
+  const tabBord=d?'#1E2D42':'#EEF0F4';
+
+  const progressDone=Object.fromEntries(ALL_QUESTIONS.filter(q=>progress.answers?.[q.id]?.correct).map(q=>[`${q.unit} · Topic ${q.topic}`,true]));
+  const totalQAnswered=Object.keys(progress.answers||{}).length;
+  const sidebarPct=Math.min(Math.round((totalQAnswered/ALL_QUESTIONS.length)*100),100);
+
+  return(
+    <div style={{display:'flex',flexDirection:'column',height:'100vh',overflow:'hidden'}}>
+      {/* HEADER */}
+      <header style={{background:'var(--theme-header)',height:54,display:'flex',alignItems:'center',padding:'0 20px',gap:12,flexShrink:0,boxShadow:'0 1px 0 rgba(255,255,255,0.06)',zIndex:100}}>
+        <div style={{display:'flex',alignItems:'center',gap:10,minWidth:160,flexShrink:0}}>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="5" fill="#B22234"/><text x="11" y="16" textAnchor="middle" fill="white" fontSize="13" fontWeight="700" fontFamily="serif">AP</text></svg>
+          <div><div style={{color:'#fff',fontWeight:700,fontSize:15,fontFamily:"'Source Sans 3',Arial,sans-serif",lineHeight:1.2}}>AP Gov Practice</div><div style={{color:'#748092',fontSize:10,fontFamily:"'Source Sans 3',Arial,sans-serif"}}>U.S. Government &amp; Politics</div></div>
+        </div>
+        <GlobalSearch dark={d} onNavigate={navigate} onTopicSelect={(topic,unitId)=>{setActiveTopic(topic);setActiveUnit(unitId);setTopicKey(topic);navigate('topic');}}/>
+        <div style={{marginLeft:'auto',display:'flex',alignItems:'center',gap:8,flexShrink:0}}>
+          <button onClick={()=>setDarkMode(d=>!d)} style={{display:'flex',alignItems:'center',gap:6,background:'rgba(255,255,255,0.08)',border:'1px solid rgba(255,255,255,0.15)',borderRadius:20,padding:'5px 12px',cursor:'pointer',color:'#fff',fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:12,fontWeight:600}}>
+            <span>{d?'☀':'🌙'}</span>
+          </button>
+          <button onClick={()=>setSettingsOpen(true)} style={{display:'flex',alignItems:'center',gap:6,background:'rgba(255,255,255,0.08)',border:'1px solid rgba(255,255,255,0.15)',borderRadius:20,padding:'5px 12px',cursor:'pointer',color:'#fff',fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:12,fontWeight:600}}>
+            ⚙
+          </button>
+          <div style={{fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:10,fontWeight:700,letterSpacing:'0.06em',textTransform:'uppercase',background:'rgba(201,168,76,0.15)',border:'1px solid rgba(201,168,76,0.35)',color:'#C9A84C',padding:'4px 10px',borderRadius:9999}}>AMSCO</div>
+        </div>
+      </header>
+
+      <div style={{display:'flex',flex:1,overflow:'hidden',position:'relative'}}>
+        {/* SIDEBAR */}
+        <Sidebar
+          activeUnit={activeUnit} activeTopic={activeTopic} progress={progressDone}
+          onTopicSelect={(topic,unitId)=>{setActiveTopic(topic); setActiveUnit(unitId); setTopicKey(topic); navigate('topic'); setMobileSidebarOpen(false);}}
+          onToolSelect={(s,unitId)=>{ navigate(s,unitId); setMobileSidebarOpen(false); }}
+          collapsed={sidebarCollapsed}
+          onToggleCollapse={()=>setSidebarCollapsed(c=>!c)}
+          mobileOpen={mobileSidebarOpen}
+        />
+
+        <main className="app-main" style={{flex:1,display:'flex',flexDirection:'column',overflow:'hidden',background:d?'#0D1421':'#F8F9FB'}}>
+          {/* Tab bar */}
+          <div className="tab-bar" style={{background:tabBg,borderBottom:`1px solid ${tabBord}`,padding:'0 12px',display:'flex',overflowX:'auto',flexShrink:0}}>
+            {TABS.map(tab=>{
+              const active=screen===tab.s;
+              return(
+                <button key={tab.s} onClick={()=>{if(tab.s==='unit-overview') { setUnitOverviewId(activeUnit); } navigate(tab.s);}} className={`tab-btn${active?' active':''}`}
+                  style={{fontFamily:"'Source Sans 3',Arial,sans-serif",fontSize:12.5,fontWeight:600,padding:'13px 11px',border:'none',background:'transparent',cursor:'pointer',
+                    color:active?(d?'var(--theme-accent-light)':'var(--theme-accent)'):(d?'#5A6779':'#9BA5B2'),
+                    borderBottom:active?(d?'2.5px solid var(--theme-accent-light)':'2.5px solid var(--theme-accent)'):'2.5px solid transparent',
+                    transition:'all 150ms',whiteSpace:'nowrap',marginBottom:-1}}>
+                  {tab.l}
+                </button>
+              );
+            })}
+          </div>
+
+          <div style={{flex:1,overflow:'hidden',display:'flex',flexDirection:'column'}}>
+            {screen==='unit-overview'&&<UnitOverview unitId={unitOverviewId} onNavigatePractice={t=>{setPracticeTopic(`Unit ${unitOverviewId}`);navigate('practice');}} onNavigateTopic={(topic,unitId)=>{setActiveTopic(topic);setActiveUnit(unitId);setTopicKey(topic);navigate('topic');}} dark={d}/>}
+            {screen==='topic'      &&<TopicStudyScreen topicKey={topicKey} onBack={()=>navigate('dashboard')} onNavigatePractice={t=>{setPracticeTopic(t);navigate('practice');}} dark={d}/>}
+            {screen==='dashboard'  &&<DashboardScreen activeUnit={activeUnit} onNavigate={navigate} progress={progress} dark={d}/>}
+            {screen==='practice'   &&<PracticeScreen progress={progress} setProgress={setProgress} dark={d} initialTopic={practiceTopic} onOpenStimulusModal={()=>{}}/>}
+            {screen==='amendments' &&<AmendmentsScreen dark={d}/>}
+            {screen==='articles'   &&<ArticlesScreen dark={d}/>}
+            {screen==='scotus'     &&<ScotusScreen dark={d}/>}
+            {screen==='vocab'      &&<VocabScreen dark={d} setProgress={setProgress}/>}
+            {screen==='docs'       &&<DocsScreen dark={d}/>}
+            {screen==='progress'   &&<ProgressScreen progress={progress} dark={d} onNavigate={navigate}/>}
+          </div>
+        </main>
+      </div>
+
+      <SettingsDrawer open={settingsOpen} onClose={()=>setSettingsOpen(false)} settings={settings} onSettingChange={(k,v)=>{const s={...settings,[k]:v}; setSettings(s); saveSettings(s);}} dark={d}/>
+    </div>
+  );
+};
+
+// Render
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+
+</body>
+</html>

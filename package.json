@@ -1,0 +1,14 @@
+{
+  "name": "ap-gov-practice",
+  "version": "1.0.0",
+  "description": "Interactive AP Government & Politics practice platform",
+  "main": "AP Gov Practice Fixed.html",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "build": "echo 'Static site - no build needed'",
+    "start": "python -m http.server 3000"
+  },
+  "keywords": ["ap-gov", "practice", "government"],
+  "author": "",
+  "license": "MIT"
+}

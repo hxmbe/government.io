@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stimulus 05 — Questions</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"DM Sans",sans-serif;background:#F5F4F0;color:#1A1A18;padding:32px 24px 48px;font-size:14px;line-height:1.65}
+  .card{background:#fff;border:1px solid #DDDBD5;border-radius:8px;overflow:hidden;max-width:780px;margin:0 auto}
+  .hdr{padding:18px 24px 14px;background:#FAFAF8;border-bottom:1px solid #E8E6E0;border-left:4px solid #534AB7}
+  .badge{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:12px;margin-bottom:8px;background:#534AB71A;color:#534AB7}
+  .topic{display:block;font-size:11px;color:#888;margin-bottom:4px}
+  .stim-title{font-family:"EB Garamond",serif;font-size:20px;font-weight:500;line-height:1.3;margin-bottom:4px}
+  .subtitle{font-size:12px;color:#6B6B68;font-style:italic}
+  .chart-placeholder{padding:16px 24px;border-bottom:1px solid #E8E6E0;background:#FAFAF8;text-align:center;color:#999;font-size:12px;font-style:italic}
+  .chart-placeholder img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  .qa{padding:22px 24px 28px}
+  .ql{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#534AB7;margin-bottom:18px}
+  .qblock{margin-bottom:22px}
+  .qblock:last-of-type{margin-bottom:0}
+  .qstem{font-size:13.5px;font-weight:500;color:#1A1A18;line-height:1.5;margin-bottom:10px}
+  .opt{display:flex;gap:10px;padding:4px 0;font-size:13px;color:#3A3A38;line-height:1.5}
+  .radio{flex-shrink:0;width:15px;height:15px;border:1.5px solid #C8C6C0;border-radius:50%;margin-top:3px}
+  .answer-key{margin-top:20px;padding-top:16px;border-top:1px dashed #DDDBD5;font-size:11.5px;color:#888}
+  .answer-key strong{color:#1A1A18;font-size:13px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="hdr">
+    <span class="badge">Unit 2</span>
+    <span class="topic">Topic 2.3 — Congressional Behavior</span>
+    <h1 class="stim-title">Senate Cloture Motions Filed per Congress, 1971–2022</h1>
+    <p class="subtitle">Number of motions to invoke cloture (end filibuster) filed per two-year Congress</p>
+  </div>
+
+  <div class="chart-placeholder">
+    <img src="stimulus_05_chart.png" alt="Senate Cloture Motions Filed per Congress, 1971–2022" onerror="this.style.display='none';this.nextSibling.style.display='block'">
+    <span style="display:none">[Chart: Senate Cloture Motions Filed per Congress, 1971–2022]</span>
+  </div>
+
+  <div class="qa">
+    <div class="ql">Practice Questions</div>
+
+    <div class="qblock">
+      <p class="qstem">1. The dramatic increase in cloture motions after the 112th Congress most directly reflects which trend?</p>
+      
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(A) A constitutional amendment expanded Senate power to review executive nominations.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(B) Increased partisan polarization led the minority party to use the filibuster more frequently to block majority legislation.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(C) The Senate formally changed its rules to require cloture votes on all legislation.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(D) An increase in the number of senators led to longer floor debates and more procedural votes.</span>
+        </div>
+    </div>
+
+    <div class="qblock">
+      <p class="qstem">2. Which best describes the constitutional significance of this trend?</p>
+      
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(A) The filibuster represents the Senate as a cooling saucer; its increased use shows the Senate functioning as the Framers intended.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(B) Increasing filibuster use reflects a departure from simple majority rule, raising questions about minority veto power in a democratic legislature.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(C) The data demonstrates the House has ceded most legislative authority to the Senate.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(D) Supreme Court decisions limiting executive power caused Congress to pass more legislation through procedural mechanisms.</span>
+        </div>
+    </div>
+
+    <div class="answer-key">
+      Answer Key &nbsp;·&nbsp; Q1 → <strong>B</strong> &nbsp;&nbsp; Q2 → <strong>B</strong>
+    </div>
+  </div>
+</div>
+</body>
+</html>
