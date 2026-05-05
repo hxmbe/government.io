@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stimulus 18 — Questions</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"DM Sans",sans-serif;background:#F5F4F0;color:#1A1A18;padding:32px 24px 48px;font-size:14px;line-height:1.65}
+  .card{background:#fff;border:1px solid #DDDBD5;border-radius:8px;overflow:hidden;max-width:780px;margin:0 auto}
+  .hdr{padding:18px 24px 14px;background:#FAFAF8;border-bottom:1px solid #E8E6E0;border-left:4px solid #854F0B}
+  .badge{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:12px;margin-bottom:8px;background:#854F0B1A;color:#854F0B}
+  .topic{display:block;font-size:11px;color:#888;margin-bottom:4px}
+  .stim-title{font-family:"EB Garamond",serif;font-size:20px;font-weight:500;line-height:1.3;margin-bottom:4px}
+  .subtitle{font-size:12px;color:#6B6B68;font-style:italic}
+  .chart-placeholder{padding:16px 24px;border-bottom:1px solid #E8E6E0;background:#FAFAF8;text-align:center;color:#999;font-size:12px;font-style:italic}
+  .chart-placeholder img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  .qa{padding:22px 24px 28px}
+  .ql{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#854F0B;margin-bottom:18px}
+  .qblock{margin-bottom:22px}
+  .qblock:last-of-type{margin-bottom:0}
+  .qstem{font-size:13.5px;font-weight:500;color:#1A1A18;line-height:1.5;margin-bottom:10px}
+  .opt{display:flex;gap:10px;padding:4px 0;font-size:13px;color:#3A3A38;line-height:1.5}
+  .radio{flex-shrink:0;width:15px;height:15px;border:1.5px solid #C8C6C0;border-radius:50%;margin-top:3px}
+  .answer-key{margin-top:20px;padding-top:16px;border-top:1px dashed #DDDBD5;font-size:11.5px;color:#888}
+  .answer-key strong{color:#1A1A18;font-size:13px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="hdr">
+    <span class="badge">Unit 5</span>
+    <span class="topic">Topic 5.10 — Modern Campaigns</span>
+    <h1 class="stim-title">Total Spending in U.S. Presidential Elections, 2000–2024</h1>
+    <p class="subtitle">Combined spending by all candidates, parties, and outside groups per election cycle (billions of current dollars)</p>
+  </div>
+
+  <div class="chart-placeholder">
+    <img src="stimulus_18_chart.png" alt="Total Spending in U.S. Presidential Elections, 2000–2024" onerror="this.style.display='none';this.nextSibling.style.display='block'">
+    <span style="display:none">[Chart: Total Spending in U.S. Presidential Elections, 2000–2024]</span>
+  </div>
+
+  <div class="qa">
+    <div class="ql">Practice Questions</div>
+
+    <div class="qblock">
+      <p class="qstem">1. The dramatic increase in campaign spending after 2010 is most directly connected to which Supreme Court decision?</p>
+      
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(A) McCulloch v. Maryland (1819), which established the federal government could regulate interstate commerce including campaign finance.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(B) Citizens United v. FEC (2010), which held that political spending by corporations, associations, and unions is a form of protected free speech, removing limits on independent expenditures.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(C) Marbury v. Madison (1803), which established judicial review and gave the Court authority to strike down campaign finance restrictions.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(D) Buckley v. Valeo (1976), which first established the constitutional link between money and speech in campaign finance.</span>
+        </div>
+    </div>
+
+    <div class="qblock">
+      <p class="qstem">2. Critics of the trend would most likely argue rising campaign spending threatens democratic principles by doing which of the following?</p>
+      
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(A) Creating an uneven playing field in which candidates with access to large donors and outside spending groups gain structural advantages over those without.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(B) Causing voter fatigue and reducing overall turnout by flooding voters with too many advertisements.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(C) Violating the equal protection clause by giving wealthy donors more First Amendment rights than ordinary citizens.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(D) Forcing incumbents to raise more money than challengers, making it harder for new candidates to compete.</span>
+        </div>
+    </div>
+
+    <div class="answer-key">
+      Answer Key &nbsp;·&nbsp; Q1 → <strong>B</strong> &nbsp;&nbsp; Q2 → <strong>A</strong>
+    </div>
+  </div>
+</div>
+</body>
+</html>

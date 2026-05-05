@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stimulus 02 — Questions</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"DM Sans",sans-serif;background:#F5F4F0;color:#1A1A18;padding:32px 24px 48px;font-size:14px;line-height:1.65}
+  .card{background:#fff;border:1px solid #DDDBD5;border-radius:8px;overflow:hidden;max-width:780px;margin:0 auto}
+  .hdr{padding:18px 24px 14px;background:#FAFAF8;border-bottom:1px solid #E8E6E0;border-left:4px solid #185fa5}
+  .badge{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:12px;margin-bottom:8px;background:#185fa51A;color:#185fa5}
+  .topic{display:block;font-size:11px;color:#888;margin-bottom:4px}
+  .stim-title{font-family:"EB Garamond",serif;font-size:20px;font-weight:500;line-height:1.3;margin-bottom:4px}
+  .subtitle{font-size:12px;color:#6B6B68;font-style:italic}
+  .chart-placeholder{padding:16px 24px;border-bottom:1px solid #E8E6E0;background:#FAFAF8;text-align:center;color:#999;font-size:12px;font-style:italic}
+  .chart-placeholder img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  .qa{padding:22px 24px 28px}
+  .ql{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#185fa5;margin-bottom:18px}
+  .qblock{margin-bottom:22px}
+  .qblock:last-of-type{margin-bottom:0}
+  .qstem{font-size:13.5px;font-weight:500;color:#1A1A18;line-height:1.5;margin-bottom:10px}
+  .opt{display:flex;gap:10px;padding:4px 0;font-size:13px;color:#3A3A38;line-height:1.5}
+  .radio{flex-shrink:0;width:15px;height:15px;border:1.5px solid #C8C6C0;border-radius:50%;margin-top:3px}
+  .answer-key{margin-top:20px;padding-top:16px;border-top:1px dashed #DDDBD5;font-size:11.5px;color:#888}
+  .answer-key strong{color:#1A1A18;font-size:13px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="hdr">
+    <span class="badge">Unit 1</span>
+    <span class="topic">Topic 1.9 — Federalism in Action</span>
+    <h1 class="stim-title">Federal Grants-in-Aid to State and Local Governments, 1970–2023</h1>
+    <p class="subtitle">Total federal grants to subnational governments (billions of constant 2023 dollars)</p>
+  </div>
+
+  <div class="chart-placeholder">
+    <img src="stimulus_02_chart.png" alt="Federal Grants-in-Aid to State and Local Governments, 1970–2023" onerror="this.style.display='none';this.nextSibling.style.display='block'">
+    <span style="display:none">[Chart: Federal Grants-in-Aid to State and Local Governments, 1970–2023]</span>
+  </div>
+
+  <div class="qa">
+    <div class="ql">Practice Questions</div>
+
+    <div class="qblock">
+      <p class="qstem">1. The sharp spike around 2009–2010 is most directly explained by which of the following?</p>
+      
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(A) A constitutional amendment expanded Congress power to fund state programs.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(B) Congress passed the American Recovery and Reinvestment Act (2009) in response to the Great Recession, dramatically increasing aid to states.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(C) The Supreme Court ruled the federal government must provide block grants to all states.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(D) States negotiated new cooperative federalism compacts with the federal government.</span>
+        </div>
+    </div>
+
+    <div class="qblock">
+      <p class="qstem">2. The overall upward trend best illustrates which concept in American federalism?</p>
+      
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(A) Dual federalism, where state and federal governments operate in entirely separate spheres.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(B) Devolution of federal authority back to the states, reducing the federal role in domestic policy.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(C) Cooperative federalism, where the federal government uses financial incentives to shape state policy priorities.</span>
+        </div>
+        <div class="opt">
+          <span class="radio"></span>
+          <span>(D) Layer-cake federalism, in which state and federal governments share equal revenue.</span>
+        </div>
+    </div>
+
+    <div class="answer-key">
+      Answer Key &nbsp;·&nbsp; Q1 → <strong>B</strong> &nbsp;&nbsp; Q2 → <strong>C</strong>
+    </div>
+  </div>
+</div>
+</body>
+</html>
